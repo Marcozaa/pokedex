@@ -8,6 +8,9 @@ module.exports = {
     extend: {
       fontFamily: {
         roboto: ["Roboto", "sans-serif"]
+      },
+      animation: {
+        'spin-slow': 'spin 4s linear infinite',
       }
     },
   },

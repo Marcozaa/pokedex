@@ -17,7 +17,6 @@ export default function PokeCard({url, name}: Props) {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
         setData(data)
         setLoading(false)
       })
@@ -42,8 +41,16 @@ export default function PokeCard({url, name}: Props) {
     ${data?.types[0].type.name == 'normal' ? 'shadow-cyan-400 bg-cyan-400':''} 
     ${data?.types[0].type.name == 'poison' ? 'shadow-violet-400 bg-violet-400':''} 
     ${data?.types[0].type.name == 'ground' ? 'shadow-stone-400 bg-stone-400':''} 
+    ${data?.types[0].type.name == 'electric' ? 'shadow-yellow-400 bg-yellow-400':''} 
+    ${data?.types[0].type.name == 'fairy' ? 'shadow-pink-400 bg-pink-400':''}
+    ${data?.types[0].type.name == 'fighting' ? 'shadow-gray-400 bg-gray-400':''} 
+    ${data?.types[0].type.name == 'ghost' ? 'shadow-purple-400 bg-purple-400':''}
+    ${data?.types[0].type.name == 'rock' ? 'shadow-zinc-400 bg-zinc-400':''} 
+    ${data?.types[0].type.name == 'psychic' ? 'shadow-amber-400 bg-amber-400':''} 
+ 
 
-    shadow-yellow-400 bg-yellow-400`}
+
+    `} 
     >
         <div className="pokemonInfos flex flex-col items-start justify-start">
             <p
@@ -59,7 +66,7 @@ export default function PokeCard({url, name}: Props) {
                     ${data?.types[0].type.name == 'normal' ? 'bg-cyan-300 ':''} 
                     ${data?.types[0].type.name == 'poison' ? 'bg-violet-300 ':''} 
                     ${data?.types[0].type.name == 'ground' ? 'bg-stone-300 ':''} 
-                    rounded-full bg-yellow-300 
+                    rounded-full 
                     flex items-center w-fit px-2 m-1 justify-center capitalize
                     `}>{type.type.name}</p>
                 ))
@@ -73,6 +80,7 @@ export default function PokeCard({url, name}: Props) {
             className={'z-10'}
             />
         </div>
+        {/** COULD BE A COMPONENT - Props: Type */}
         <svg id="Layer_1" 
        className={`
        ${data?.types[0].type.name == 'fire' ? 'fill-red-300':''} 
@@ -82,7 +90,7 @@ export default function PokeCard({url, name}: Props) {
        ${data?.types[0].type.name == 'normal' ? 'fill-cyan-300':''} 
        ${data?.types[0].type.name == 'poison' ? 'fill-violet-300':''} 
        ${data?.types[0].type.name == 'ground' ? 'fill-stone-300':''} 
-       fill-yellow-300 w-28 h-28 absolute bottom-[-10px] right-[-10px]`
+       w-28 h-28 absolute bottom-[-10px] right-[-10px]`
       }
        data-name="Layer 1" 
        xmlns="http://www.w3.org/2000/svg" 

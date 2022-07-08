@@ -6,7 +6,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@ramonak/react-progress-bar": "^5.0.1",
     "@uiball/loaders": "^1.2.6",
+    "framer-motion": "^6.4.2",
     "next": "latest",
     "react": "18.1.0",
     "react-dom": "18.1.0",

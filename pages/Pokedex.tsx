@@ -11,7 +11,7 @@ export default function Pokedex({pokemons}: any) {
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=60')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=160')
       .then((res) => res.json())
       .then((data) => {
         setData(data)
